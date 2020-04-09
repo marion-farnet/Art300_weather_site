@@ -3,8 +3,140 @@ body{
     font-family: 'Playfair Display', serif;
     background-color: #102D30 ;
     color: #E2DEDD;
-
 /* other color in use #56716A
 specifically for the background of the individual divs*/
 
+}
+
+h1{
+    font-family: 'Tangerine', cursive;
+    font-size: 5em;
+    text-align: center;
+}
+
+h3{
+    font-family: 'Tangerine', cursive;
+    font-size: 3em;
+    text-align: left;
+    margin-left: 40px;;
+}
+
+h2{
+    font-family: 'Playfair Display', serif;
+    font-size: 8em;
+    text-align: left;
+    margin-left: 40px;
+}
+
+h4{
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 400;
+}
+
+.header{
+    height: 400px;
+    width: 85vw;
+    margin-left: 6vw;
+    margin-right: 6vw;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+.current_temp{
+    background-color:#56716A;
+    height: 400px;
+    width: 50vw;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.location{
+    background-color:#56716A;
+    height: 400px;
+    width: 35vw;
+    margin-left: 20px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.percent{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.weather_details{
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.location_specifics{
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-top: 30px;
+}
+
+.zip{
+    text-align: center;
+    margin-top: 50px;
+}
+
+input{
+    background-color:  #102D30 ;
+    height: 40px;
+    width:120px;
+    color: #E2DEDD;
+    font-family: 'Playfair Display', serif;
+    font-size: 12pt;
+    text-align: center;
+
+}
+
+/*EVERTHING ABOVE IS JUST FOR THE TOP PIECE*/
+
+
+
+.ten_day{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height:700px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.day{
+    background-color: #56716A;
+    height: 400px;
+    width: 15vw;
+    margin:auto;
+    margin-bottom:20px;
+}
+
+.changes{
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.moon_phase{
+    text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+.map{
+    background-color: black;
+    height:700px;
+    width: 75vw;
+    margin-top:175px;
+    margin-left: 12vw;
+    margin-right:10vw;
 }
