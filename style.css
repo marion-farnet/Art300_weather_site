@@ -140,3 +140,32 @@ input{
     margin-left: 12vw;
     margin-right:10vw;
 }
+
+
+.hourly{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    height:1400px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.hour_slot{
+    background-color: #56716A;
+    height: 200px;
+    width: 40vw;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.hourly_changes{
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr;
+
+}
+
+.hourly_percent{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
