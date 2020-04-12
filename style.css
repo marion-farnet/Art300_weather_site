@@ -60,9 +60,16 @@ h4{
     grid-template-columns: 1fr 1fr;
 }
 
-.percent{
+.img1{
     display:grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 5px 60px 80px;
+    margin-left: 9vw;
+    margin-right: 2vw;
+}
+
+#raindrop{
+    width: 10px;
+    margin-top: 37px;
 }
 
 .weather_details{
@@ -92,8 +99,13 @@ input{
 
 }
 
+.input{
+    visibility: hidden;
+}
 /*EVERTHING ABOVE IS JUST FOR THE TOP PIECE*/
 
+
+/*everything below is 10 day forecast*/
 
 
 .ten_day{
@@ -105,9 +117,90 @@ input{
     margin-right: 5vw;
 }
 
+.raindrop2{
+    display:grid;
+    grid-template-columns: 1vw 15vw;
+}
+
+#raindrop_2{
+    height:20px;
+    margin-left: 6vw;
+    margin-top:20px;
+}
+
+#sunny{
+    height:40px;
+}
+
+#moonage{
+    height:40px;
+}
+
+#raindrop_3{
+    height:20px;
+    margin-left: 6vw;
+    margin-top:20px;
+}
+
+#light_rain{
+    height:40px;
+}
+
+#moonage_2{
+    height:40px;
+}
+
+#raindrop_4{
+    height:20px;
+    margin-left: 6vw;
+    margin-top:20px;
+}
+
+#raindrop_5{
+    height:20px;
+    margin-left: 6vw;
+    margin-top:20px;
+}
+
+#raindrop_6{
+    height:20px;
+    margin-left: 6vw;
+    margin-top:20px;
+}
+
+#raindrop_7{
+    height:20px;
+    margin-left: 6vw;
+    margin-top:20px;
+}
+
+#raindrop_8{
+    height:20px;
+    margin-left: 6vw;
+    margin-top:20px;
+}
+
+#raindrop_9{
+    height:20px;
+    margin-left: 6vw;
+    margin-top:20px;
+}
+
+#raindrop_10{
+    height:20px;
+    margin-left: 6vw;
+    margin-top:20px;
+}
+
+#raindrop_11{
+    height:20px;
+    margin-left: 6vw;
+    margin-top:20px;
+}
+
 .day{
     background-color: #56716A;
-    height: 400px;
+    height: 30vw;
     width: 15vw;
     margin:auto;
     margin-bottom:20px;
@@ -115,7 +208,7 @@ input{
 
 .changes{
     display:grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 4vw 3vw 5vw 5vw;
     text-align: center;
 }
 
@@ -124,11 +217,10 @@ input{
 
 }
 
+/*everything above is 10 day forecast*/
 
 
-
-
-
+/*everything below is hourly forecast forecast*/
 
 
 
@@ -136,7 +228,7 @@ input{
     background-color: black;
     height:700px;
     width: 75vw;
-    margin-top:175px;
+    margin-top:25vw;
     margin-left: 12vw;
     margin-right:10vw;
 }
@@ -145,10 +237,23 @@ input{
 .hourly{
     display:grid;
     grid-template-columns: 1fr 1fr;
-    grid-template rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     height:1400px;
     margin-left: 5vw;
     margin-right: 5vw;
+}
+.hourly_percent{
+    display:grid;
+    grid-template-columns: 1vw 1vw;
+}
+
+#rain_hourly1{
+    height: 20px;
+    margin-top: 15px;
+}
+
+#stormy{
+    height:40px;
 }
 
 .hour_slot{
@@ -161,11 +266,101 @@ input{
 
 .hourly_changes{
     display:grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 30px 50px 70px;
 
 }
 
-.hourly_percent{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+
+
+
+/* tablet size 768px x 1024px edits*/
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+
+    .header{
+        height: 400px;
+        width: 85vw;
+        margin-left: 9vw;
+        margin-right: 6vw;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+    }
+
+    .input{
+        visibility: visible;
+        margin-left:35vw;
+        margin-bottom:40px;
+    }
+    input{
+        background-color: #56716A;
+        height: 40px;
+        width:300px;
+        color: #E2DEDD;
+        font-family: 'Playfair Display', serif;
+        font-size: 12pt;
+        text-align: center;
+    }
+
+    .location{
+        visibility: hidden;
+    }
+
+    .current_temp{
+        background-color:#56716A;
+        height: 400px;
+        width: 80vw;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .img1{
+        display:grid;
+        grid-template-columns: 5px 60px 80px;
+        margin-left: 14vw;
+        margin-right: 2vw;
+    }
+
+    #raindrop{
+        width: 10px;
+        margin-top: 37px;
+    }
+
+    .day{
+        background-color: #56716A;
+        height: 35vw;
+        width: 15vw;
+        margin:auto;
+        margin-bottom:20px;
+    }
+
+    .map{
+        background-color: black;
+        height:700px;
+        width: 75vw;
+        margin-top:15vw;
+        margin-left: 12vw;
+        margin-right:10vw;
+    }
+
+
+
+
+
 }
+
+
+
+
+ /* Phone Styles width 767px */
+ @media screen and (max-width: 767px) {
+
+
+
+
+
+
+
+
+
+
+
+
+ }
