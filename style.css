@@ -150,53 +150,7 @@ input{
     height:40px;
 }
 
-#raindrop_4{
-    height:20px;
-    margin-left: 6vw;
-    margin-top:20px;
-}
 
-#raindrop_5{
-    height:20px;
-    margin-left: 6vw;
-    margin-top:20px;
-}
-
-#raindrop_6{
-    height:20px;
-    margin-left: 6vw;
-    margin-top:20px;
-}
-
-#raindrop_7{
-    height:20px;
-    margin-left: 6vw;
-    margin-top:20px;
-}
-
-#raindrop_8{
-    height:20px;
-    margin-left: 6vw;
-    margin-top:20px;
-}
-
-#raindrop_9{
-    height:20px;
-    margin-left: 6vw;
-    margin-top:20px;
-}
-
-#raindrop_10{
-    height:20px;
-    margin-left: 6vw;
-    margin-top:20px;
-}
-
-#raindrop_11{
-    height:20px;
-    margin-left: 6vw;
-    margin-top:20px;
-}
 
 .day{
     background-color: #56716A;
@@ -234,6 +188,8 @@ input{
 }
 
 
+
+
 .hourly{
     display:grid;
     grid-template-columns: 1fr 1fr;
@@ -242,6 +198,7 @@ input{
     margin-left: 5vw;
     margin-right: 5vw;
 }
+
 .hourly_percent{
     display:grid;
     grid-template-columns: 1vw 1vw;
@@ -331,6 +288,12 @@ input{
         margin-bottom:20px;
     }
 
+    .changes{
+        display:grid;
+        grid-template-rows: 9vw 8vw 9vw 9vw 10vw 11vw 10vw;
+        text-align: center;
+    }
+
     .map{
         background-color: black;
         height:700px;
@@ -339,12 +302,9 @@ input{
         margin-left: 12vw;
         margin-right:10vw;
     }
-
-
-
-
-
 }
+
+
 
 
 
@@ -352,11 +312,106 @@ input{
  /* Phone Styles width 767px */
  @media screen and (max-width: 767px) {
 
+    .header{
+        height: 400px;
+        width: 85vw;
+        margin-left: 6vw;
+        margin-right: 6vw;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+    }
+    .input{
+        visibility: visible;
+        margin-left:20vw;
+        margin-bottom:40px;
+    }
+    input{
+        background-color: #56716A;
+        height: 40px;
+        width:300px;
+        color: #E2DEDD;
+        font-family: 'Playfair Display', serif;
+        font-size: 12pt;
+        text-align: center;
+    }
 
+    .location{
+        visibility: hidden;
+    }
 
+    .current_temp{
+        background-color:#56716A;
+        height: 400px;
+        width: 85vw;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
 
+    .ten_day{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        height:700px;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
 
+    .day{
+        background-color: #56716A;
+        height: 65vw;
+        width: 40vw;
+        margin:auto;
+        margin-bottom:20px;
+    }
 
+    .changes{
+        display:grid;
+        grid-template-rows: 9vw 8vw 8vw 10vw 7vw 10vw;
+        text-align: center;
+    }
+
+    .raindrop2{
+        display:grid;
+        grid-template-columns: 7vw 8vw;
+        margin-left: 10vw;
+    }
+
+    
+    .map{
+        background-color: black;
+        height:400px;
+        width: 75vw;
+        margin-top:195vw;
+        margin-left: 11vw;
+        margin-right:10vw;
+    }
+
+    .hourly{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        height:1400px;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+
+    .hour_slot{
+        background-color: #56716A;
+        height: 200px;
+        width: 85vw;
+        margin-left: 1vw;
+        margin-bottom: 30px;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hourly_percent{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .hourly_percent{
+        margin-right: px;
+    }
 
 
 
