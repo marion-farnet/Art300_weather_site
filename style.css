@@ -87,9 +87,11 @@ h4{
     margin-top: 30px;
 }
 
-.zip{
+input#zip_1{
     text-align: center;
     margin-top: 50px;
+    margin-left:4vw;
+    width: 145px;
 }
 
 input{
@@ -100,7 +102,6 @@ input{
     font-family: 'Playfair Display', serif;
     font-size: 12pt;
     text-align: center;
-
 }
 
 .input{
@@ -140,11 +141,6 @@ input{
     height:40px;
 }
 
-#raindrop_3{
-    height:20px;
-    margin-left: 6vw;
-    margin-top:20px;
-}
 
 #light_rain{
     height:40px;
@@ -203,11 +199,6 @@ input{
     margin-right: 5vw;
 }
 
-.hourly_percent{
-    display:grid;
-    grid-template-columns: 1vw 1vw;
-}
-
 #rain_hourly1{
     height: 20px;
     margin-top: 15px;
@@ -225,11 +216,6 @@ input{
     grid-template-columns: 1fr 1fr;
 }
 
-.hourly_changes{
-    display:grid;
-    grid-template-rows: 30px 50px 70px;
-
-}
 
 
 

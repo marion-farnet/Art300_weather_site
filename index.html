@@ -14,26 +14,26 @@
     <div class="results" id="app">
 
       <h1>Weather Alerts</h1>
-      <input placeholder="Enter Your ZIP Code" v-on:input="zip_trigger" name="name" id="zip"/>
+      <div class="input"><input placeholder="Enter Your ZIP Code" v-on:input="zip_trigger" name="name" id="zip"/></div>
       <div class="header">
-         <div class="current_temp"> <h2>{{current.temp.current}}</h2>
+         <div class="current_temp"> <h2>{{current.temp.current}}°</h2>
             <div class="weather_details">
-                <div class="weather_type"> <h4>Mostly Cloudly</h4> </div>
+                <div class="weather_type"> <h4>{{current.description_long}}</h4> </div>
                 <div class="img1">
                     <img id="raindrop" src="/img/raindrop.png">
-                    <div class="percent"> <h4> 2% </h4></div>
-                    <div class="inches"> <h4> 3in </h4></div>
+                    <div class="percent"> <h4>{{forecast[0].pop}}%</h4></div>
+                    <div class="inches"> <h4> {{forecast[0].rain}} % </h4></div>
                 </div>
-                <div class="humiditiy"> <h4> Humidity 18% </h4></div>
-                <div class="wind_direction"> <h4> NNE 8mph </h4></div>
+                <div class="humiditiy"> <h4> humidity: {{current.humidity}} %</h4></div>
+                <div class="wind_direction"> <h4> {{current.wind.speed}}</h4></div>
           </div>
         </div>
-          <div class="location"> <h2>KS </h2>
+          <div class="location"> <h2>{{location.state}} </h2>
               <div class="state">
               <div class="location_specifics">
-                  <div class="city"> <h4>Lenexa </h4></div>
-                  <div class="county"><h4> Johnson County</h4></div>
-                  <input placeholder="Enter Your ZIP Code"  v-on:input="zip_trigger" name="name" id="zip" />
+                  <div class="city"> <h4>{{location.name}} </h4></div>
+                  <div class="county"><h4>{{location.county}}</h4></div>
+                  <input placeholder="Enter Your ZIP Code"  v-on:input="zip_trigger" name="name" id="zip_1" />
               </div>
             </div>
         </div>
@@ -44,12 +44,12 @@
       <div class="ten_day">
           <div class="day">
               <div class="changes"> 
-                  <div class="day_name"> <h4>Monday</h4> </div>
-                  <div class="high"><h6>High 88°</h6></div>
-                  <div class="low"><h6>Low 58°</h6></div>
+                  <div class="day_name"> <h4>{{forecast[0].weekday}}</h4> </div>
+                  <div class="high"><h6>High - {{forecast[0].max_temp}}°</h6></div>
+                  <div class="low"><h6>Low - {{forecast[0].min_temp}}°</h6></div>
                   <div class="raindrop2">
                     <div class="icon_home"><img id="raindrop_2" src="/img/raindrop.png"></div>
-                    <div class="percentage"><h6>20%</h6></div>
+                    <div class="percentage"><h6>{{forecast[0].pop}}%</h6></div>
                   </div>
                   <div class="weather_icon"> <img id="sunny" src="/img/sunny.png"> </div>
                   <div class="moon_phase"><h6>moon phase</h6></div>
@@ -58,12 +58,12 @@
           </div>
           <div class="day">
             <div class="changes"> 
-                <div class="day_name"> <h4>Monday</h4> </div>
-                <div class="high"><h6>High 88°</h6></div>
-                <div class="low"><h6>Low 58°</h6></div>
+                <div class="day_name"> <h4>{{forecast[1].weekday}}</h4> </div>
+                <div class="high"><h6>High - {{forecast[1].max_temp}}°</h6></div>
+                <div class="low"><h6>Low - {{forecast[1].min_temp}}°</h6></div>
                 <div class="raindrop2">
                   <div class="icon_home"><img id="raindrop_2" src="/img/raindrop.png"></div>
-                  <div class="percentage"><h6>20%</h6></div>
+                  <div class="percentage"><h6>{{forecast[1].pop}}%</h6></div>
                 </div>
                 <div class="weather_icon"> <img id="sunny" src="/img/sunny.png"> </div>
                 <div class="moon_phase"><h6>moon phase</h6></div>
@@ -72,12 +72,12 @@
         </div>
         <div class="day">
             <div class="changes"> 
-                <div class="day_name"> <h4>Monday</h4> </div>
-                <div class="high"><h6>High 88°</h6></div>
-                <div class="low"><h6>Low 58°</h6></div>
+                <div class="day_name"> <h4>{{forecast[2].weekday}}</h4> </div>
+                <div class="high"><h6>High - {{forecast[2].max_temp}}°</h6></div>
+                <div class="low"><h6>Low - {{forecast[2].min_temp}}°</h6></div>
                 <div class="raindrop2">
                   <div class="icon_home"><img id="raindrop_2" src="/img/raindrop.png"></div>
-                  <div class="percentage"><h6>20%</h6></div>
+                  <div class="percentage"><h6>{{forecast[2].pop}}%</h6></div>
                 </div>
                 <div class="weather_icon"> <img id="sunny" src="/img/sunny.png"> </div>
                 <div class="moon_phase"><h6>moon phase</h6></div>
@@ -86,12 +86,12 @@
         </div>
         <div class="day">
             <div class="changes"> 
-                <div class="day_name"> <h4>Monday</h4> </div>
-                <div class="high"><h6>High 88°</h6></div>
-                <div class="low"><h6>Low 58°</h6></div>
+                <div class="day_name"> <h4>{{forecast[3].weekday}}</h4> </div>
+                <div class="high"><h6>High - {{forecast[3].max_temp}}°</h6></div>
+                <div class="low"><h6>Low - {{forecast[3].min_temp}}°</h6></div>
                 <div class="raindrop2">
                   <div class="icon_home"><img id="raindrop_2" src="/img/raindrop.png"></div>
-                  <div class="percentage"><h6>20%</h6></div>
+                  <div class="percentage"><h6>{{forecast[3].pop}}%</h6></div>
                 </div>
                 <div class="weather_icon"> <img id="sunny" src="/img/sunny.png"> </div>
                 <div class="moon_phase"><h6>moon phase</h6></div>
@@ -100,12 +100,12 @@
         </div>
         <div class="day">
             <div class="changes"> 
-                <div class="day_name"> <h4>Monday</h4> </div>
-                <div class="high"><h6>High 88°</h6></div>
-                <div class="low"><h6>Low 58°</h6></div>
+                <div class="day_name"> <h4>{{forecast[4].weekday}}</h4> </div>
+                <div class="high"><h6>High - {{forecast[4].max_temp}}°</h6></div>
+                <div class="low"><h6>Low - {{forecast[4].min_temp}}°</h6></div>
                 <div class="raindrop2">
                   <div class="icon_home"><img id="raindrop_2" src="/img/raindrop.png"></div>
-                  <div class="percentage"><h6>20%</h6></div>
+                  <div class="percentage"><h6>{{forecast[4].pop}}%</h6></div>
                 </div>
                 <div class="weather_icon"> <img id="sunny" src="/img/sunny.png"> </div>
                 <div class="moon_phase"><h6>moon phase</h6></div>
@@ -114,12 +114,12 @@
         </div>
         <div class="day">
             <div class="changes"> 
-                <div class="day_name"> <h4>Monday</h4> </div>
-                <div class="high"><h6>High 88°</h6></div>
-                <div class="low"><h6>Low 58°</h6></div>
+                <div class="day_name"> <h4>{{forecast[5].weekday}}</h4> </div>
+                <div class="high"><h6>High - {{forecast[5].max_temp}}°</h6></div>
+                <div class="low"><h6>Low - {{forecast[5].min_temp}}°</h6></div>
                 <div class="raindrop2">
                   <div class="icon_home"><img id="raindrop_2" src="/img/raindrop.png"></div>
-                  <div class="percentage"><h6>20%</h6></div>
+                  <div class="percentage"><h6>{{forecast[5].pop}}%</h6></div>
                 </div>
                 <div class="weather_icon"> <img id="sunny" src="/img/sunny.png"> </div>
                 <div class="moon_phase"><h6>moon phase</h6></div>
@@ -128,12 +128,12 @@
         </div>
         <div class="day">
             <div class="changes"> 
-                <div class="day_name"> <h4>Monday</h4> </div>
-                <div class="high"><h6>High 88°</h6></div>
-                <div class="low"><h6>Low 58°</h6></div>
+                <div class="day_name"> <h4>{{forecast[6].weekday}}</h4> </div>
+                <div class="high"><h6>High - {{forecast[6].max_temp}}°</h6></div>
+                <div class="low"><h6>Low - {{forecast[6].min_temp}}°</h6></div>
                 <div class="raindrop2">
                   <div class="icon_home"><img id="raindrop_2" src="/img/raindrop.png"></div>
-                  <div class="percentage"><h6>20%</h6></div>
+                  <div class="percentage"><h6>{{forecast[6].pop}}%</h6></div>
                 </div>
                 <div class="weather_icon"> <img id="sunny" src="/img/sunny.png"> </div>
                 <div class="moon_phase"><h6>moon phase</h6></div>
@@ -142,12 +142,12 @@
         </div>
         <div class="day">
             <div class="changes"> 
-                <div class="day_name"> <h4>Monday</h4> </div>
-                <div class="high"><h6>High 88°</h6></div>
-                <div class="low"><h6>Low 58°</h6></div>
+                <div class="day_name"> <h4>{{forecast[7].weekday}}</h4> </div>
+                <div class="high"><h6>High - {{forecast[7].max_temp}}°</h6></div>
+                <div class="low"><h6>Low - {{forecast[7].min_temp}}°</h6></div>
                 <div class="raindrop2">
                   <div class="icon_home"><img id="raindrop_2" src="/img/raindrop.png"></div>
-                  <div class="percentage"><h6>20%</h6></div>
+                  <div class="percentage"><h6>{{forecast[7].pop}}%</h6></div>
                 </div>
                 <div class="weather_icon"> <img id="sunny" src="/img/sunny.png"> </div>
                 <div class="moon_phase"><h6>moon phase</h6></div>
@@ -156,12 +156,12 @@
         </div>
         <div class="day">
             <div class="changes"> 
-                <div class="day_name"> <h4>Monday</h4> </div>
-                <div class="high"><h6>High 88°</h6></div>
-                <div class="low"><h6>Low 58°</h6></div>
+                <div class="day_name"> <h4>{{forecast[8].weekday}}</h4> </div>
+                <div class="high"><h6>High - {{forecast[8].max_temp}}°</h6></div>
+                <div class="low"><h6>Low - {{forecast[8].min_temp}}°</h6></div>
                 <div class="raindrop2">
                   <div class="icon_home"><img id="raindrop_2" src="/img/raindrop.png"></div>
-                  <div class="percentage"><h6>20%</h6></div>
+                  <div class="percentage"><h6>{{forecast[8].pop}}%</h6></div>
                 </div>
                 <div class="weather_icon"> <img id="sunny" src="/img/sunny.png"> </div>
                 <div class="moon_phase"><h6>moon phase</h6></div>
@@ -170,12 +170,12 @@
         </div>
         <div class="day">
             <div class="changes"> 
-                <div class="day_name"> <h4>Monday</h4> </div>
-                <div class="high"><h6>High 88°</h6></div>
-                <div class="low"><h6>Low 58°</h6></div>
+                <div class="day_name"> <h4>{{forecast[9].weekday}}</h4> </div>
+                <div class="high"><h6>High - {{forecast[9].max_temp}}°</h6></div>
+                <div class="low"><h6>Low - {{forecast[9].min_temp}}°</h6></div>
                 <div class="raindrop2">
                   <div class="icon_home"><img id="raindrop_2" src="/img/raindrop.png"></div>
-                  <div class="percentage"><h6>20%</h6></div>
+                  <div class="percentage"><h6>{{forecast[9].pop}}%</h6></div>
                 </div>
                 <div class="weather_icon"> <img id="sunny" src="/img/sunny.png"> </div>
                 <div class="moon_phase"><h6>moon phase</h6></div>
@@ -194,145 +194,121 @@
       <h3>12 Hour Forecast</h3>
       <div class="hourly">
           <div class="hour_slot">
-              <div class="time"> <h3> 1pm </h3></div>
+              <div class="time"> <h3>{{hourly[0].time}}</h3></div>
               <div class="hourly_changes">
-                  <div class="hourly_high"><p>High 70%</p></div>
-                  <div class="hourly_low"><p>Low 50%</p></div>
+                  <div class="hourly_high"><p>Average Temperature: {{hourly[0].temperature}}°</p></div>
                   <div class="hourly_percent">
-                      <div class="raindrop_hourly"><img id="rain_hourly1" src="/img/raindrop.png"></div>
-                      <div class="hour_percent"><p>20%</p></div>
+                      <div class="hour_percent"><p>{{hourly[0].shortForecast}}</p></div>
                   </div>
                   <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
               </div>
           </div>
           <div class="hour_slot">
-            <div class="time"> <h3> 1pm </h3></div>
+            <div class="time"> <h3>{{hourly[1].time}}</h3></div>
             <div class="hourly_changes">
-                <div class="hourly_high"><p>High 70%</p></div>
-                <div class="hourly_low"><p>Low 50%</p></div>
+                <div class="hourly_high"><p>Average Temperature: {{hourly[1].temperature}}°</p></div>
                 <div class="hourly_percent">
-                    <div class="raindrop_hourly"><img id="rain_hourly1" src="/img/raindrop.png"></div>
-                    <div class="hour_percent"><p>20%</p></div>
+                    <div class="hour_percent"><p>{{hourly[1].shortForecast}}</p></div>
                 </div>
                 <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
             </div>
         </div>
         <div class="hour_slot">
-            <div class="time"> <h3> 1pm </h3></div>
+            <div class="time"> <h3>{{hourly[2].time}}</h3></div>
             <div class="hourly_changes">
-                <div class="hourly_high"><p>High 70%</p></div>
-                <div class="hourly_low"><p>Low 50%</p></div>
+                <div class="hourly_high"><p>Average Temperature: {{hourly[2].temperature}}°</p></div>
                 <div class="hourly_percent">
-                    <div class="raindrop_hourly"><img id="rain_hourly1" src="/img/raindrop.png"></div>
-                    <div class="hour_percent"><p>20%</p></div>
+                    <div class="hour_percent"><p>{{hourly[2].shortForecast}}</p></div>
                 </div>
                 <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
             </div>
         </div>
         <div class="hour_slot">
-            <div class="time"> <h3> 1pm </h3></div>
+            <div class="time"> <h3>{{hourly[3].time}}</h3></div>
             <div class="hourly_changes">
-                <div class="hourly_high"><p>High 70%</p></div>
-                <div class="hourly_low"><p>Low 50%</p></div>
+                <div class="hourly_high"><p>Average Temperature: {{hourly[3].temperature}}°</p></div>
                 <div class="hourly_percent">
-                    <div class="raindrop_hourly"><img id="rain_hourly1" src="/img/raindrop.png"></div>
-                    <div class="hour_percent"><p>20%</p></div>
+                    <div class="hour_percent"><p>{{hourly[3].shortForecast}}</p></div>
                 </div>
                 <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
             </div>
         </div>
         <div class="hour_slot">
-            <div class="time"> <h3> 1pm </h3></div>
+            <div class="time"> <h3>{{hourly[4].time}}</h3></div>
             <div class="hourly_changes">
-                <div class="hourly_high"><p>High 70%</p></div>
-                <div class="hourly_low"><p>Low 50%</p></div>
+                <div class="hourly_high"><p>Average Temperature: {{hourly[4].temperature}}°</p></div>
                 <div class="hourly_percent">
-                    <div class="raindrop_hourly"><img id="rain_hourly1" src="/img/raindrop.png"></div>
-                    <div class="hour_percent"><p>20%</p></div>
+                    <div class="hour_percent"><p>{{hourly[4].shortForecast}}</p></div>
                 </div>
                 <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
             </div>
         </div>
         <div class="hour_slot">
-            <div class="time"> <h3> 1pm </h3></div>
+            <div class="time"> <h3>{{hourly[5].time}}</h3></div>
             <div class="hourly_changes">
-                <div class="hourly_high"><p>High 70%</p></div>
-                <div class="hourly_low"><p>Low 50%</p></div>
+                <div class="hourly_high"><p>Average Temperature: {{hourly[5].temperature}}°</p></div>
                 <div class="hourly_percent">
-                    <div class="raindrop_hourly"><img id="rain_hourly1" src="/img/raindrop.png"></div>
-                    <div class="hour_percent"><p>20%</p></div>
+                    <div class="hour_percent"><p>{{hourly[5].shortForecast}}</p></div>
                 </div>
                 <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
             </div>
         </div>
         <div class="hour_slot">
-            <div class="time"> <h3> 1pm </h3></div>
+            <div class="time"> <h3>{{hourly[6].time}}</h3></div>
             <div class="hourly_changes">
-                <div class="hourly_high"><p>High 70%</p></div>
-                <div class="hourly_low"><p>Low 50%</p></div>
+                <div class="hourly_high"><p>Average Temperature: {{hourly[6].temperature}}°</p></div>
                 <div class="hourly_percent">
-                    <div class="raindrop_hourly"><img id="rain_hourly1" src="/img/raindrop.png"></div>
-                    <div class="hour_percent"><p>20%</p></div>
+                    <div class="hour_percent"><p>{{hourly[6].shortForecast}}</p></div>
                 </div>
                 <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
             </div>
         </div>
         <div class="hour_slot">
-            <div class="time"> <h3> 1pm </h3></div>
+            <div class="time"> <h3>{{hourly[7].time}}</h3></div>
             <div class="hourly_changes">
-                <div class="hourly_high"><p>High 70%</p></div>
-                <div class="hourly_low"><p>Low 50%</p></div>
+                <div class="hourly_high"><p>Average Temperature: {{hourly[7].temperature}}°</p></div>
                 <div class="hourly_percent">
-                    <div class="raindrop_hourly"><img id="rain_hourly1" src="/img/raindrop.png"></div>
-                    <div class="hour_percent"><p>20%</p></div>
+                    <div class="hour_percent"><p>{{hourly[7].shortForecast}}</p></div>
                 </div>
                 <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
             </div>
         </div>
         <div class="hour_slot">
-            <div class="time"> <h3> 1pm </h3></div>
+            <div class="time"> <h3>{{hourly[8].time}}</h3></div>
             <div class="hourly_changes">
-                <div class="hourly_high"><p>High 70%</p></div>
-                <div class="hourly_low"><p>Low 50%</p></div>
+                <div class="hourly_high"><p>Average Temperature: {{hourly[8].temperature}}°</p></div>
                 <div class="hourly_percent">
-                    <div class="raindrop_hourly"><img id="rain_hourly1" src="/img/raindrop.png"></div>
-                    <div class="hour_percent"><p>20%</p></div>
+                    <div class="hour_percent"><p>{{hourly[8].shortForecast}}</p></div>
                 </div>
                 <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
             </div>
         </div>
         <div class="hour_slot">
-            <div class="time"> <h3> 1pm </h3></div>
+            <div class="time"> <h3>{{hourly[9].time}}</h3></div>
             <div class="hourly_changes">
-                <div class="hourly_high"><p>High 70%</p></div>
-                <div class="hourly_low"><p>Low 50%</p></div>
+                <div class="hourly_high"><p>Average Temperature: {{hourly[9].temperature}}°</p></div>
                 <div class="hourly_percent">
-                    <div class="raindrop_hourly"><img id="rain_hourly1" src="/img/raindrop.png"></div>
-                    <div class="hour_percent"><p>20%</p></div>
+                    <div class="hour_percent"><p>{{hourly[9].shortForecast}}</p></div>
                 </div>
                 <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
             </div>
         </div>
         <div class="hour_slot">
-            <div class="time"> <h3> 1pm </h3></div>
+            <div class="time"> <h3>{{hourly[10].time}}</h3></div>
             <div class="hourly_changes">
-                <div class="hourly_high"><p>High 70%</p></div>
-                <div class="hourly_low"><p>Low 50%</p></div>
+                <div class="hourly_high"><p>Average Temperature: {{hourly[10].temperature}}°</p></div>
                 <div class="hourly_percent">
-                    <div class="raindrop_hourly"><img id="rain_hourly1" src="/img/raindrop.png"></div>
-                    <div class="hour_percent"><p>20%</p></div>
+                    <div class="hour_percent"><p>{{hourly[10].shortForecast}}</p></div>
                 </div>
                 <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
             </div>
         </div>
         <div class="hour_slot">
-            <div class="time"> <h3> 1pm </h3></div>
+            <div class="time"> <h3>{{hourly[11].time}}</h3></div>
             <div class="hourly_changes">
-                <div class="hourly_high"><p>High 70%</p></div>
-                <div class="hourly_low"><p>Low 50%</p></div>
+                <div class="hourly_high"><p>Average Temperature: {{hourly[11].temperature}}°</p></div>
                 <div class="hourly_percent">
-                    <div class="raindrop_hourly"><img id="rain_hourly1" src="/img/raindrop.png"></div>
-                    <div class="hour_percent"><p>20%</p></div>
+                    <div class="hour_percent"><p>{{hourly[11].shortForecast}}</p></div>
                 </div>
                 <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
             </div>
