@@ -1,3 +1,7 @@
+.degree_symbol:not(:empty)::after {
+    content: "°";
+  }
+
 body{
     font-family: 'Tangerine', cursive;
     font-family: 'Playfair Display', serif;
