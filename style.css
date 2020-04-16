@@ -1,7 +1,3 @@
-.degree_symbol:not(:empty)::after {
-    content: "°";
-  }
-
 body{
     font-family: 'Tangerine', cursive;
     font-family: 'Playfair Display', serif;
@@ -9,8 +5,117 @@ body{
     color: #E2DEDD;
 /* other color in use #56716A
 specifically for the background of the individual divs*/
-
 }
+
+/*{{forecast[1].moon}}*/
+
+img{
+    height: 4vw;
+    margin-left: 5vw;
+    margin-right:5vw;
+}
+
+
+.icon_01m {
+    background-image: url("img/01d.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+.icon_02m {
+    background-image: url("img/01d.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+.icon_03m {
+    background-image: url("img/01d.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+.icon_04m {
+    background-image: url("img/01d.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+.icon_05m {
+    background-image: url("img/01d.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+
+.icon_01d {
+    background-image: url("img/01d.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .icon_02d {
+    background-image: url("img/02d.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  
+  .icon_03d {
+    background-image: url("img/03d.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  
+  .icon_04d {
+    background-image: url("img/04d.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  
+  .icon_09d {
+    background-image: url("img/09d.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  
+  .icon_10d {
+    background-image: url("img/10d.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  
+  .icon_11d {
+    background-image: url("img/11d.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  
+  .icon_13d {
+    background-image: url("img/13d.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  
+  .icon_50d {
+    background-image: url("img/50d.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+
 
 h1{
     font-family: 'Tangerine', cursive;
@@ -71,10 +176,6 @@ h4{
     margin-right: 2vw;
 }
 
-#raindrop{
-    width: 10px;
-    margin-top: 37px;
-}
 
 .weather_details{
     display:grid;
@@ -133,22 +234,6 @@ input{
     margin-top:20px;
 }
 
-#sunny{
-    height:40px;
-}
-
-#moonage{
-    height:40px;
-}
-
-
-#light_rain{
-    height:40px;
-}
-
-#moonage_2{
-    height:40px;
-}
 
 
 
