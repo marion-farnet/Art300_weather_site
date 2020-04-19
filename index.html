@@ -19,10 +19,10 @@
          <div class="current_temp"> <h2>{{current.temp.current}}°</h2>
             <div class="weather_details">
                 <div class="weather_type"> <h4>{{current.description_long}}</h4> </div>
+                <div class="raindrop1"><img id="raindrop" src="/img/raindrop.png"></div>
                 <div class="img1">
-                    <div class="raindrop1"><img id="raindrop" src="/img/raindrop.png"></div>
                     <div class="percent"> <h4>{{forecast[0].pop}}%</h4></div>
-                    <div class="inches"> <h4> {{forecast[0].rain}} % </h4></div>
+                    <div class="inches"> <h4> {{forecast[0].precip}} in </h4></div>
                 </div>
                 <div class="humiditiy"> <h4> humidity: {{current.humidity}} %</h4></div>
                 <div class="wind_direction"> <h4> {{current.wind.speed}}</h4></div>
@@ -32,7 +32,7 @@
               <div class="state">
               <div class="location_specifics">
                   <div class="city"> <h4>{{location.name}} </h4></div>
-                  <div class="county"><h4>{{location.county}}</h4></div>
+                  <div class="county"><h4>Latitude:{{location.coord.lat}}  Longitude:{{location.coord.lon}}</h4></div>
                   <input placeholder="Enter Your ZIP Code"  v-on:input="zip_trigger" name="name" id="zip_1" />
               </div>
             </div>
@@ -51,9 +51,9 @@
                     <div class="icon_home"><img id="raindrop_2" src="/img/raindrop.png"></div>
                     <div class="percentage"><h6>{{forecast[0].pop}}%</h6></div>
                   </div>
-                  <img v-bind:src="'/img/' + forecast[0].description_icon + '.png'" v-bind:alt="forecast[1].weather.description"/>
-                  <div class="moon_phase"><h6>moon phase</h6></div>
-                  <div class="moonimage"><img id="moonage" src="/img/full moon.png"></div>
+                  <img v-bind:src="'/img/' + forecast[0].description_icon + '.png'" v-bind:alt="forecast[0].weather.description"/>
+                  <div class="moon_phase"><h4>moon phase</h4></div>
+                  <div class="moondescription"> {{forecast[0].moon}}</div>
                 </div>
           </div>
           <div class="day">
@@ -66,8 +66,8 @@
                   <div class="percentage"><h6>{{forecast[1].pop}}%</h6></div>
                 </div>
                 <img v-bind:src="'/img/' + forecast[1].description_icon + '.png'" v-bind:alt="forecast[1].weather.description"/>
-                <div class="moon_phase"><h6>moon phase</h6></div>
-                <div class="moonimage"><img id="moonage" src="/img/full moon.png"></div>
+                <div class="moon_phase"><h4>moon phase</h4></div>
+                <div class="moondescription"> {{forecast[1].moon}}</div>
               </div>
         </div>
         <div class="day">
@@ -79,9 +79,9 @@
                   <div class="icon_home"><img id="raindrop_2" src="/img/raindrop.png"></div>
                   <div class="percentage"><h6>{{forecast[2].pop}}%</h6></div>
                 </div>
-                <img v-bind:src="'/img/' + forecast[2].description_icon + '.png'" v-bind:alt="forecast[1].weather.description"/>
-                <div class="moon_phase"><h6>moon phase</h6></div>
-                <div class="moonimage"><img id="moonage" src="/img/full moon.png"></div>
+                <img v-bind:src="'/img/' + forecast[2].description_icon + '.png'" v-bind:alt="forecast[2].weather.description"/>
+                <div class="moon_phase"><h4>moon phase</h4></div>
+                <div class="moondescription"> {{forecast[2].moon}}</div>
               </div>
         </div>
         <div class="day">
@@ -93,9 +93,9 @@
                   <div class="icon_home"><img id="raindrop_2" src="/img/raindrop.png"></div>
                   <div class="percentage"><h6>{{forecast[3].pop}}%</h6></div>
                 </div>
-                <img v-bind:src="'/img/' + forecast[3].description_icon + '.png'" v-bind:alt="forecast[1].weather.description"/>
-                <div class="moon_phase"><h6>moon phase</h6></div>
-                <div class="moonimage"><img id="moonage" src="/img/full moon.png"></div>
+                <img v-bind:src="'/img/' + forecast[3].description_icon + '.png'" v-bind:alt="forecast[3].weather.description"/>
+                <div class="moon_phase"><h4>moon phase</h4></div>
+                <div class="moondescription"> {{forecast[3].moon}}</div>
               </div>
         </div>
         <div class="day">
@@ -107,89 +107,15 @@
                   <div class="icon_home"><img id="raindrop_2" src="/img/raindrop.png"></div>
                   <div class="percentage"><h6>{{forecast[4].pop}}%</h6></div>
                 </div>
-                <img v-bind:src="'/img/' + forecast[4].description_icon + '.png'" v-bind:alt="forecast[1].weather.description"/>
-                <div class="moon_phase"><h6>moon phase</h6></div>
-                <div class="moonimage"><img id="moonage" src="/img/full moon.png"></div>
+                <img v-bind:src="'/img/' + forecast[4].description_icon + '.png'" v-bind:alt="forecast[4].weather.description"/>
+                <div class="moon_phase"><h4>moon phase</h4></div>
+                <div class="moondescription"> {{forecast[4].moon}}</div>
               </div>
         </div>
-        <div class="day">
-            <div class="changes"> 
-                <div class="day_name"> <h4>{{forecast[5].weekday}}</h4> </div>
-                <div class="high"><h6>High - {{forecast[5].max_temp}}°</h6></div>
-                <div class="low"><h6>Low - {{forecast[5].min_temp}}°</h6></div>
-                <div class="raindrop2">
-                  <div class="icon_home"><img id="raindrop_2" src="/img/raindrop.png"></div>
-                  <div class="percentage"><h6>{{forecast[5].pop}}%</h6></div>
-                </div>
-                <img v-bind:src="'/img/' + forecast[5].description_icon + '.png'" v-bind:alt="forecast[1].weather.description"/>
-                <div class="moon_phase"><h6>moon phase</h6></div>
-                <div class="moonimage"><img id="moonage" src="/img/full moon.png"></div>
-              </div>
-        </div>
-        <div class="day">
-            <div class="changes"> 
-                <div class="day_name"> <h4>{{forecast[6].weekday}}</h4> </div>
-                <div class="high"><h6>High - {{forecast[6].max_temp}}°</h6></div>
-                <div class="low"><h6>Low - {{forecast[6].min_temp}}°</h6></div>
-                <div class="raindrop2">
-                  <div class="icon_home"><img id="raindrop_2" src="/img/raindrop.png"></div>
-                  <div class="percentage"><h6>{{forecast[6].pop}}%</h6></div>
-                </div>
-                <img v-bind:src="'/img/' + forecast[6].description_icon + '.png'" v-bind:alt="forecast[1].weather.description"/>
-                <div class="moon_phase"><h6>moon phase</h6></div>
-                <div class="moonimage"><img id="moonage" src="/img/full moon.png"></div>
-              </div>
-        </div>
-        <div class="day">
-            <div class="changes"> 
-                <div class="day_name"> <h4>{{forecast[7].weekday}}</h4> </div>
-                <div class="high"><h6>High - {{forecast[7].max_temp}}°</h6></div>
-                <div class="low"><h6>Low - {{forecast[7].min_temp}}°</h6></div>
-                <div class="raindrop2">
-                  <div class="icon_home"><img id="raindrop_2" src="/img/raindrop.png"></div>
-                  <div class="percentage"><h6>{{forecast[7].pop}}%</h6></div>
-                </div>
-                <img v-bind:src="'/img/' + forecast[7].description_icon + '.png'" v-bind:alt="forecast[1].weather.description"/>
-                <div class="moon_phase"><h6>moon phase</h6></div>
-                <div class="moonimage"><img id="moonage" src="/img/full moon.png"></div>
-              </div>
-        </div>
-        <div class="day">
-            <div class="changes"> 
-                <div class="day_name"> <h4>{{forecast[8].weekday}}</h4> </div>
-                <div class="high"><h6>High - {{forecast[8].max_temp}}°</h6></div>
-                <div class="low"><h6>Low - {{forecast[8].min_temp}}°</h6></div>
-                <div class="raindrop2">
-                  <div class="icon_home"><img id="raindrop_2" src="/img/raindrop.png"></div>
-                  <div class="percentage"><h6>{{forecast[8].pop}}%</h6></div>
-                </div>
-                <img v-bind:src="'/img/' + forecast[8].description_icon + '.png'" v-bind:alt="forecast[1].weather.description"/>
-                <div class="moon_phase"><h6>moon phase</h6></div>
-                <div class="moonimage"><img id="moonage" src="/img/full moon.png"></div>
-              </div>
-        </div>
-        <div class="day">
-            <div class="changes"> 
-                <div class="day_name"> <h4>{{forecast[9].weekday}}</h4> </div>
-                <div class="high"><h6>High - {{forecast[9].max_temp}}°</h6></div>
-                <div class="low"><h6>Low - {{forecast[9].min_temp}}°</h6></div>
-                <div class="raindrop2">
-                  <div class="icon_home"><img id="raindrop_2" src="/img/raindrop.png"></div>
-                  <div class="percentage"><h6>{{forecast[9].pop}}%</h6></div>
-                </div>
-                <img v-bind:src="'/img/' + forecast[9].description_icon + '.png'" v-bind:alt="forecast[1].weather.description"/>
-                <div class="moon_phase"><h6>moon phase</h6></div>
-                <div class="moonimage"><img id="moonage" src="/img/full moon.png"></div>
-              </div>
-        </div>
-        
-
-         
         </div>
 
+        <div id="map"></div>
 
-
-      <div class="map"></div>
 
       <h3>12 Hour Forecast</h3>
       <div class="hourly">
@@ -200,7 +126,8 @@
                   <div class="hourly_percent">
                       <div class="hour_percent"><p>{{hourly[0].shortForecast}}</p></div>
                   </div>
-                  <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
+                  {{hourly[0].windSpeed}}
+                  {{hourly[0].windDirection}}
               </div>
           </div>
           <div class="hour_slot">
@@ -210,7 +137,8 @@
                 <div class="hourly_percent">
                     <div class="hour_percent"><p>{{hourly[1].shortForecast}}</p></div>
                 </div>
-                <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
+                {{hourly[1].windSpeed}}
+                {{hourly[1].windDirection}}
             </div>
         </div>
         <div class="hour_slot">
@@ -220,7 +148,8 @@
                 <div class="hourly_percent">
                     <div class="hour_percent"><p>{{hourly[2].shortForecast}}</p></div>
                 </div>
-                <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
+                {{hourly[2].windSpeed}}
+                {{hourly[2].windDirection}}
             </div>
         </div>
         <div class="hour_slot">
@@ -230,7 +159,8 @@
                 <div class="hourly_percent">
                     <div class="hour_percent"><p>{{hourly[3].shortForecast}}</p></div>
                 </div>
-                <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
+                {{hourly[3].windSpeed}}
+                {{hourly[3].windDirection}}
             </div>
         </div>
         <div class="hour_slot">
@@ -240,7 +170,8 @@
                 <div class="hourly_percent">
                     <div class="hour_percent"><p>{{hourly[4].shortForecast}}</p></div>
                 </div>
-                <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
+                {{hourly[4].windSpeed}}
+                {{hourly[4].windDirection}}
             </div>
         </div>
         <div class="hour_slot">
@@ -250,7 +181,8 @@
                 <div class="hourly_percent">
                     <div class="hour_percent"><p>{{hourly[5].shortForecast}}</p></div>
                 </div>
-                <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
+                {{hourly[5].windSpeed}}
+                {{hourly[5].windDirection}}
             </div>
         </div>
         <div class="hour_slot">
@@ -260,7 +192,8 @@
                 <div class="hourly_percent">
                     <div class="hour_percent"><p>{{hourly[6].shortForecast}}</p></div>
                 </div>
-                <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
+                {{hourly[6].windSpeed}}
+                {{hourly[6].windDirection}}
             </div>
         </div>
         <div class="hour_slot">
@@ -270,7 +203,8 @@
                 <div class="hourly_percent">
                     <div class="hour_percent"><p>{{hourly[7].shortForecast}}</p></div>
                 </div>
-                <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
+                {{hourly[7].windSpeed}}
+                {{hourly[7].windDirection}}
             </div>
         </div>
         <div class="hour_slot">
@@ -280,7 +214,8 @@
                 <div class="hourly_percent">
                     <div class="hour_percent"><p>{{hourly[8].shortForecast}}</p></div>
                 </div>
-                <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
+                {{hourly[8].windSpeed}}
+                {{hourly[8].windDirection}}
             </div>
         </div>
         <div class="hour_slot">
@@ -290,7 +225,8 @@
                 <div class="hourly_percent">
                     <div class="hour_percent"><p>{{hourly[9].shortForecast}}</p></div>
                 </div>
-                <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
+                {{hourly[9].windSpeed}}
+                {{hourly[9].windDirection}}
             </div>
         </div>
         <div class="hour_slot">
@@ -300,7 +236,8 @@
                 <div class="hourly_percent">
                     <div class="hour_percent"><p>{{hourly[10].shortForecast}}</p></div>
                 </div>
-                <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
+                {{hourly[10].windSpeed}}
+                {{hourly[10].windDirection}}
             </div>
         </div>
         <div class="hour_slot">
@@ -310,21 +247,11 @@
                 <div class="hourly_percent">
                     <div class="hour_percent"><p>{{hourly[11].shortForecast}}</p></div>
                 </div>
-                <div class="hourly_weather_icon"> <img id="stormy" src="/img/thunderstorm.png"></div>
+                {{hourly[11].windSpeed}}
+                {{hourly[11].windDirection}}
             </div>
         </div>
         </div>
-
-        <div class="icon_01d "></div>       
-        <div class="icon_02d "></div>       
-        <div class="icon_03d "></div>      
-        <div class="icon_04d "></div>         
-        <div class="icon_09d "></div>          
-        <div class="icon_10d "></div>          
-        <div class="icon_11d "></div>           
-        <div class="icon_13d "></div>           
-        <div class="icon_50d "></div> 
-
     </div>
 
   </body>

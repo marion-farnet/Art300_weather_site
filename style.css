@@ -7,50 +7,11 @@ body{
 specifically for the background of the individual divs*/
 }
 
-/*{{forecast[1].moon}}*/
-
 img{
     height: 4vw;
     margin-left: 5vw;
     margin-right:5vw;
 }
-
-
-.icon_01m {
-    background-image: url("img/01d.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }
-
-.icon_02m {
-    background-image: url("img/01d.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }
-
-.icon_03m {
-    background-image: url("img/01d.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }
-
-.icon_04m {
-    background-image: url("img/01d.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }
-
-.icon_05m {
-    background-image: url("img/01d.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }
-
 
 .icon_01d {
     background-image: url("img/01d.png");
@@ -143,6 +104,12 @@ h4{
     font-weight: 400;
 }
 
+h6{
+    font-size: 1em;
+    text-align: center;
+    font-weight: 400;
+}
+
 .header{
     height: 400px;
     width: 85vw;
@@ -171,15 +138,21 @@ h4{
 
 .img1{
     display:grid;
-    grid-template-columns: 5px 60px 80px;
-    margin-left: 9vw;
-    margin-right: 2vw;
+    grid-template-columns:1fr 1fr;
+    margin-left: 5vw;
+    margin-right: 5vw;
 }
 
+#raindrop{
+    margin-left: 150px;
+    margin-top: 80px;
+    height:20px;
+
+}
 
 .weather_details{
     display:grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows:  40px 40px 80px 90px 90px;
 }
 
 .location_specifics{
@@ -191,8 +164,9 @@ h4{
 input#zip_1{
     text-align: center;
     margin-top: 50px;
-    margin-left:4vw;
-    width: 145px;
+    margin-left:5vw;
+    margin-right:5vw;
+    width: 160px;
 }
 
 input{
@@ -230,18 +204,15 @@ input{
 
 #raindrop_2{
     height:20px;
-    margin-left: 6vw;
-    margin-top:20px;
+    margin-left: 7vw;
+    margin-top:35px;
 }
-
-
 
 
 .day{
     background-color: #56716A;
     height: 30vw;
     width: 15vw;
-    margin:auto;
     margin-bottom:20px;
 }
 
@@ -262,14 +233,10 @@ input{
 /*everything below is hourly forecast forecast*/
 
 
-
-.map{
-    background-color: black;
-    height:700px;
-    width: 75vw;
-    margin-top:25vw;
-    margin-left: 12vw;
-    margin-right:10vw;
+#map{
+    height:600px;
+    width: 450px;
+    margin-left:40vw;
 }
 
 
@@ -343,39 +310,46 @@ input{
         display:grid;
         grid-template-columns: 1fr 1fr;
     }
+
     .img1{
         display:grid;
-        grid-template-columns: 5px 60px 80px;
-        margin-left: 14vw;
+        grid-template-columns: 60px 80px;
+        margin-left: 15vw;
         margin-right: 2vw;
     }
 
     #raindrop{
-        width: 10px;
-        margin-top: 37px;
+        margin-top: 80px;
+        margin-right: 55px;
     }
 
     .day{
         background-color: #56716A;
-        height: 35vw;
-        width: 15vw;
+        height: 40vw;
+        width: 16vw;
         margin:auto;
-        margin-bottom:20px;
+    }
+
+    #raindrop_2{
+        margin-top: 40px;
+    }
+
+    .raindrop2{
+        display:grid;
+        grid-template-columns: 8.5vw 0vw;
     }
 
     .changes{
         display:grid;
-        grid-template-rows: 9vw 8vw 9vw 9vw 10vw 11vw 10vw;
+        grid-template-rows: 5vw 5vw 4vw 9vw 4vw 8vw;
         text-align: center;
     }
 
-    .map{
-        background-color: black;
-        height:700px;
-        width: 75vw;
-        margin-top:15vw;
-        margin-left: 12vw;
-        margin-right:10vw;
+    #map{
+    
+        height:600px;
+        width: 450px;
+        margin-left: 30vw;
     }
 }
 
@@ -386,6 +360,12 @@ input{
 
  /* Phone Styles width 767px */
  @media screen and (max-width: 767px) {
+
+    img{
+        height: 4vw;
+        margin-left: 17vw;
+        margin-right:5vw;
+    }
 
     .header{
         height: 400px;
@@ -426,7 +406,7 @@ input{
         display:grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-        height:700px;
+        height:1300px;
         margin-left: 5vw;
         margin-right: 5vw;
     }
@@ -439,26 +419,24 @@ input{
         margin-bottom:20px;
     }
 
+
     .changes{
         display:grid;
-        grid-template-rows: 9vw 8vw 8vw 10vw 7vw 10vw;
+        grid-template-rows: 9vw 8vw 8vw 13vw 4vw 10vw;
         text-align: center;
     }
 
     .raindrop2{
         display:grid;
-        grid-template-columns: 7vw 8vw;
+        grid-template-columns: 9vw 8vw;
         margin-left: 10vw;
     }
 
     
-    .map{
-        background-color: black;
+    #map{
         height:400px;
-        width: 75vw;
-        margin-top:195vw;
-        margin-left: 11vw;
-        margin-right:10vw;
+        width: 400vw;
+        margin-left:13vw;
     }
 
     .hourly{
